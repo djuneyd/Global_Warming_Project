@@ -11,9 +11,10 @@ db = SQLAlchemy(app)
 class Offers(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     offer = db.Column(db.Text)
+
+
     def __repr__(self):
         return f'<Offers{self.id}>' 
-
 
 @app.route("/")
 def index():

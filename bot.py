@@ -36,4 +36,4 @@ async def on_message(message):
         else:
             await message.channel.send('ПУСТОЕ ПРЕДЛОЖЕНИЕ ОТПРАВИТЬ НЕЛЬЗЯ❗')
 
-client.run('MTE3MzMxMTgwOTk0MDM2NTMyMg.G-zxIx.Ejsj9twPHqlC1rnzxPlMPP0QQIiykvclWj0kw4')
+client.run('MTE3MzMxMTgwOTk0MDM2NTMyMg.GgZhMd.YstvByw0utqi1KN9h0YfAbAah67HJdZyG3e6CE')

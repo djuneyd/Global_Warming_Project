@@ -15,16 +15,25 @@ async def on_ready():
 
 @client.event 
 async def on_message(message):
-    if message.content.startswith('$offer'):
+
+    if message.content.startswith('$hello'):
+        await message.channel.send(f'Приветствую❗ Я бот помогающий борьбе с глобальным потеплением, если хочешь узнать мои функции, напиши команду ($help)❗')
+
+    elif message.content.startswith('$help'):
+        await message.channel.send(100*'-')
+        await message.channel.send('''Команда ($offer) позволяет внести предложение в базу данных по борьбе с глобальным потеплением❗ --- Пример записи❗ ($offer не есть мясо)''')
+        await message.channel.send(100*'-')
+
+    elif message.content.startswith('$offer'):
         new = str(message.content).replace('$offer', '')
-        suggestion = Offers(offer=new)
+        if new != '':
+            suggestion = Offers(offer=new)
 
-        with app.app_context():
-            db.session.add(suggestion)
-            db.session.commit()
-        await message.channel.send('Спасибо за помощь в сборе предложений! Мы записали вашу идею на наш официальный сайт!')
+            with app.app_context():
+                db.session.add(suggestion)
+                db.session.commit()
+            await message.channel.send('Спасибо за помощь в сборе предложений❗ Мы записали вашу идею на наш официальный сайт❗')
+        else:
+            await message.channel.send('ПУСТОЕ ПРЕДЛОЖЕНИЕ ОТПРАВИТЬ НЕЛЬЗЯ❗')
 
-
-
-
-client.run('MTE3MzMxMTgwOTk0MDM2NTMyMg.Gkttxe.HsIRida-iOCALaVr8lazi3cNU9vMmMAIyfC6cQ')
+client.run('MTE3MzMxMTgwOTk0MDM2NTMyMg.G-zxIx.Ejsj9twPHqlC1rnzxPlMPP0QQIiykvclWj0kw4')

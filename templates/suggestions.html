@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <title>Suggestions</title>
+</head>
+
+<style>
+    body {
+        background: url(../static/img/main_bg.jpg);
+        background-size: cover;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+    #main-text {
+        background-color:rgba(103, 216, 105, 0.8);
+        color: whitesmoke;
+        width: 1300px;
+        text-align: center;
+        border-radius: 30px;
+        margin: auto;
+        font-size: 35px;
+        border: 2px whitesmoke;
+        box-shadow: 0px 0px 40px rgb(103, 216, 105);
+        border: 5px solid whitesmoke;
+        padding: 10px 20px;
+    }
+    #main-text-block {
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+    #ds_link_image {
+        border-radius: 50%;
+        width: 100px;
+        border: 5px solid whitesmoke;
+        box-shadow: 0px 0px 40px rgb(46, 197, 48);
+    }
+    #ds_link_image_block {
+        width: 200px;
+        margin: auto;
+        margin-top: 30px;
+    }
+    .offer {
+        background-color:rgba(103, 216, 105, 0.8);
+        color: whitesmoke;
+        border-radius: 20px;
+        font-size: 20px;
+        border: 2px whitesmoke;
+        box-shadow: 0px 0px 40px rgb(103, 216, 105);
+        border: 5px solid whitesmoke;
+        padding: 10px 20px;
+        margin: auto;
+        margin-top: 10px;
+        width: 1700px;
+    }
+</style>
+
+<body>
+    <div id="ds_link_image_block">
+        <a href="https://discord.gg/t39zU9YPP">
+            <img src="../static/img/ds_link.jpg" alt="Дискорд бот" id="ds_link_image">
+        </a>
+    </div>
+
+    <div id="main-text-block">
+        <h1 id="main-text">ПРЕДЛОЖЕНИЯ ОТ ПОЛЬЗОВАТЕЛЕЙ НАШЕГО DISCORD БОТА</h1>
+    </div>
+    {% block content %}
+    {% for offer in offers %}
+        <h4 class="offer">{{offer.offer}}</h4>
+    {% endfor %}
+    {% endblock %}
+</body>
+
+</html>

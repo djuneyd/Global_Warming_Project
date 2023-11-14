@@ -9,11 +9,83 @@
     body {
         background: url(../static/img/main_bg.jpg);
         background-size: cover;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+
+    #main-text {
+        background-color:rgba(103, 216, 105, 0.8);
+        color: whitesmoke;
+        width: 700px;
+        text-align: center;
+        border-radius: 30px;
+        margin: auto;
+        font-size: 40px;
+        border: 2px whitesmoke;
+        box-shadow: 0px 0px 40px rgb(103, 216, 105);
+        border: 5px solid whitesmoke;
+        padding: 10px 20px;
+    }
+    #main-text-block {
+        margin-top: 100px;
+    }
+
+    #main-info {
+        width: 1000px;
+        font-size: 25px;
+        color: whitesmoke;
+        border-radius: 25px;
+        margin: auto;
+        text-align: center;
+        background-color:rgba(103, 216, 105, 0.8);
+        box-shadow: 0px 0px 40px rgb(103, 216, 105);
+        border: 5px solid whitesmoke;
+        padding: 10px 20px;
+    }
+
+    #main-info-block {
+        margin-top: 50px;
+    }
+
+    #suggestions {
+        background-color:rgba(103, 216, 105, 0.8);
+        box-shadow: 0px 0px 40px rgb(103, 216, 105);
+        border: 5px solid whitesmoke;
+        font-size: 25px;
+        color: whitesmoke;
+        border-radius: 25px;
+        text-align: center;
+        text-decoration: none;
+        padding: 10px 20px;
+    }
+
+    #suggestions:hover {
+        background-color: rgb(73, 210, 75);
+    }
+
+    #buttons {
+        margin-left: 425px;
+        margin-top: 50px;
     }
 </style>
 
 <body>
-    
+    <div id="main-text-block">
+        <h1 id="main-text">ГЛОБАЛЬНОЕ ПОТЕПЛЕНИЕ</h1>
+    </div>
+
+    <div id="main-info-block">
+        <p id="main-info">Глобальное потеплеение — долгосрочное повышение средней температуры климатической системы Земли, происходящее уже более века, основной причиной чего, по мнению подавляющего большинства учёных, является человеческая деятельность (антропогенный фактор).</p>
+    </div>
+
+    <table id="buttons">
+        <tr>
+            <td>
+                <div id="suggestions-block">
+                    <a href="/suggestions" id="suggestions">Предложения</a>
+                </div>
+            </td>
+        </tr>
+    </table>
 </body>
 
 </html>

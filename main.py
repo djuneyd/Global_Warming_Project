@@ -15,9 +15,15 @@ class Offers(db.Model):
     def __repr__(self):
         return f'<Offers{self.id}>' 
 
+
 @app.route("/")
 def index():
     return render_template('index.html')
+
+@app.route('/suggestions')
+def suggestions():
+    offers = Offers.query.order_by(Offers.id).all()
+    return render_template('suggestions.html', offers=offers)
 
 
 if __name__ == "__main__":

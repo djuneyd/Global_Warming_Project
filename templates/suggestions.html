@@ -26,48 +26,79 @@
         padding: 10px 20px;
     }
     #main-text-block {
-        margin-top: 30px;
         margin-bottom: 50px;
     }
     #ds_link_image {
         border-radius: 50%;
-        width: 100px;
-        border: 5px solid whitesmoke;
+        width: 50px;
+        border: 3px solid whitesmoke;
         box-shadow: 0px 0px 40px rgb(46, 197, 48);
     }
     #ds_link_image_block {
         width: 200px;
         margin: auto;
-        margin-top: 30px;
     }
     .offer {
         background-color:rgba(103, 216, 105, 0.8);
         color: whitesmoke;
         border-radius: 20px;
         font-size: 20px;
-        border: 2px whitesmoke;
         box-shadow: 0px 0px 40px rgb(103, 216, 105);
-        border: 5px solid whitesmoke;
+        border: 3px solid whitesmoke;
         padding: 10px 20px;
-        margin: auto;
         margin-top: 10px;
-        width: 1700px;
+        margin-left: 50px;
+        width: max-content;
+    }
+    #back {
+        background-color:rgba(103, 216, 105, 0.8);
+        color: whitesmoke;
+        border-radius: 20px;
+        font-size: 20px;
+        box-shadow: 0px 0px 40px rgb(103, 216, 105);
+        border: 3px solid whitesmoke;
+        padding: 10px 20px;
+        width: max-content;
+        text-decoration: none;
+    }
+    #back-block {
+        margin-top: 30px;
+        width: max-content;
+        margin-bottom: 32px;
+        margin-right: 10px;
+        margin-left: 20px;
+    }
+    #back:hover {
+        background-color: rgb(73, 210, 75);
     }
 </style>
 
 <body>
-    <div id="ds_link_image_block">
-        <a href="https://discord.gg/t39zU9YPP">
-            <img src="../static/img/ds_link.jpg" alt="Дискорд бот" id="ds_link_image">
-        </a>
-    </div>
+
+    <table>
+        <tr>
+            <td>
+                <div id="back-block">
+                    <a href="/" id="back">назад</a>
+                </div>
+            </td>
+            <td>
+                <div id="ds_link_image_block">
+                    <a href="https://discord.gg/t39zU9YPP" target="_blank">
+                        <img src="../static/img/ds_link.jpg" alt="Дискорд бот" id="ds_link_image">
+                    </a>
+                </div>
+            </td>
+        </tr>
+    </table>
 
     <div id="main-text-block">
         <h1 id="main-text">ПРЕДЛОЖЕНИЯ ОТ ПОЛЬЗОВАТЕЛЕЙ НАШЕГО DISCORD БОТА</h1>
     </div>
+
     {% block content %}
     {% for offer in offers %}
-        <h4 class="offer">{{offer.offer}}</h4>
+        <h4 class="offer">Аноним говорит: {{offer.offer}}</h4>
     {% endfor %}
     {% endblock %}
 </body>

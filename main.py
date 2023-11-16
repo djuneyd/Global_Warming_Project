@@ -10,6 +10,7 @@ db = SQLAlchemy(app)
 
 class Offers(db.Model):
     id = db.Column(db.Integer, primary_key = True)
+    name = db.Column(db.Text)
     offer = db.Column(db.Text)
 
     def __repr__(self):
@@ -29,7 +30,8 @@ def log_reg():
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
     global name
-    error = ''
+    i = 0
+    error = 'Такого логина не существует'
     if request.method == 'POST':
         form_login = request.form['login']
 
@@ -40,14 +42,16 @@ def login():
                 name = form_login
                 return redirect('/main')
         else:
-            error = 'Неправильный пользователь или пароль'
-            return render_template('login.html', error = error)
+            i = 1
+            return render_template('login.html', error = error, i=i)
 
     else:
-        return render_template('login.html')
+        return render_template('login.html',error=error, i=i)
 
 @app.route('/register', methods = ['GET', 'POST'])
 def register():
+    error = 'Такой логин уже был зарегестрирован'
+    i = 0
     if request.method == 'POST':
         login = request.form['login']
 
@@ -55,8 +59,8 @@ def register():
 
         for user in users:
             if user.login == login:
-                error = 'Такая почта уже была зарегестрирована'
-                return render_template("register.html", error=error)
+                i = 1
+                return render_template("register.html", error=error, i=i)
         else:
             user_card = User(login=login)
 
@@ -65,7 +69,7 @@ def register():
 
             return redirect('/')
     else:
-        return render_template("register.html")
+        return render_template("register.html", error=error, i=i)
 
 @app.route('/main')
 def main_page():
@@ -78,6 +82,21 @@ def suggestions():
     i = 0
     return render_template('suggestions.html', offers=offers
                                             , i=i)
+
+@app.route('/offer', methods = ['GET', 'POST'])
+def offer():
+    global name
+    if request.method == 'POST':
+        offer = request.form['offer']
+
+        offer_card = Offers(offer=offer, name=name)
+
+        db.session.add(offer_card)
+        db.session.commit()
+
+        return redirect('/suggestions')
+    else:
+        return render_template("offer.html")
 
 @app.route('/main_info')
 def main_info():

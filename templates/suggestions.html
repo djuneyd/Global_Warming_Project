@@ -46,7 +46,7 @@
     .text {
         font-size: 20px;
     }
-    #back {
+    .back {
         background-color:rgba(103, 216, 105, 0.8);
         color: whitesmoke;
         border-radius: 20px;
@@ -57,19 +57,18 @@
         width: max-content;
         text-decoration: none;
     }
-    #back-block {
+    .back-block {
         margin-top: 30px;
         width: max-content;
         margin-bottom: 32px;
         margin-right: 10px;
-        margin-left: 53px;
     }
-    #back:hover {
+    .back:hover {
         background-color: rgb(73, 210, 75);
     }
     .offer {
         margin-left: 53px;
-        color: black;
+        color: whitesmoke;
         background-color:rgba(103, 216, 105, 0.6);
         border-radius: 20px;
         box-shadow: 0px 0px 40px rgb(103, 216, 105);
@@ -79,35 +78,40 @@
         text-decoration: none;
         margin-bottom: 30px;
     }
+    #buttons-table {
+        margin-left: 60px;
+        margin-top: 30px;
+    }
 </style>
 
 <body>
 
-    <table>
+    <table id="buttons-table">
         <tr>
             <td>
-                <div id="back-block">
-                    <a href="/main" id="back">назад</a>
+                <div class="back-block">
+                    <a href="/main" class="back">назад</a>
                 </div>
             </td>
             <td>
-                <div id="ds_link_image_block">
-                    <a href="https://discord.gg/t39zU9YPP" target="_blank">
+                <div class="back-block">
+                    <!-- <a href="https://discord.gg/t39zU9YPP" target="_blank">
                         <img src="../static/img/ds_link.jpg" alt="Дискорд бот" id="ds_link_image">
-                    </a>
+                    </a> -->
+                    <a href="/offer" class="back">Предложить</a>
                 </div>
             </td>
         </tr>
     </table>
 
     <div id="main-text-block">
-        <h1 id="main-text">ПРЕДЛОЖЕНИЯ ОТ ПОЛЬЗОВАТЕЛЕЙ НАШЕГО DISCORD БОТА</h1>
+        <h1 id="main-text">ПРЕДЛОЖЕНИЯ ОТ ПОЛЬЗОВАТЕЛЕЙ НАШЕГО САЙТА</h1>
     </div>
 
     {% block content %}
     {% for offer in offers %}
     <div class="offer">
-        <h4 class="header-topic">Аноним говорит:</h4>
+        <h4 class="header-topic">{{offer.name}} говорит:</h4>
         <p class="text">{{offer.offer}}</p>
     </div>
     {% endfor %}

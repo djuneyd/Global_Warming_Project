@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Register</title>
 </head>
 
 <style>
@@ -30,7 +30,6 @@
     #forma {
         margin: auto;
         width: max-content;
-        margin-top: 300px;
         background-color: transparent;
     }
     #inputik {
@@ -40,6 +39,7 @@
         font-size: 30px;
         border-bottom: 2px solid gray;
         padding: 20px 0px;
+        width: 400px;
     }
     #button {
         background-color:rgba(103, 216, 105, 0.8);
@@ -86,6 +86,11 @@
         width: max-content;
         margin: auto;
     }
+    #error {
+        width: max-content;
+        margin: auto;
+        margin-top: 250px;
+    }
 </style>
 
 <body>
@@ -97,10 +102,17 @@
         <h1 id="main-text">ВВЕДИТЕ ЛОГИН КОТОРЫЙ ВЫ ИСПОЛЬЗОВАЛИ ВО ВРЕМЯ РЕГИСТРАЦИИ</h1>
     </div>
     {% block content %}
+    <div id="error">
+        {% if i == 0 %}
+            <p style="color: transparent;">{{error}}</p>
+        {% else %}
+            <p style="color: black;">{{error}}</p>
+        {% endif %}
+    </div>
     <form action="{{url_for('register')}}" method="post" id="forma">
         <div id="input-block">
             <label for="login" id="laybelchik">
-                <input type="text" name="login" placeholder="Придумайте себе имя" required id="inputik">
+                <input type="text" name="login" placeholder="Придумайте себе имя..." required id="inputik">
             </label>
         </div>
         <div id="button-block">

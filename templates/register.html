@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+
+<style>
+    body {
+        background: url(/static/img/main_bg.jpg);
+        background-size: cover;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+    #main-text {
+        background-color:rgba(103, 216, 105, 0.8);
+        color: whitesmoke;
+        width: max-content;
+        text-align: center;
+        border-radius: 30px;
+        margin: auto;
+        font-size: 40px;
+        border: 2px whitesmoke;
+        box-shadow: 0px 0px 40px rgb(103, 216, 105);
+        border: 5px solid whitesmoke;
+        padding: 10px 20px;
+    }
+    #main-text-block {
+        margin-top: 30px;
+    }
+    #forma {
+        margin: auto;
+        width: max-content;
+        margin-top: 300px;
+        background-color: transparent;
+    }
+    #inputik {
+        outline: none;
+        border: none;
+        background: none;
+        font-size: 30px;
+        border-bottom: 2px solid gray;
+        padding: 20px 0px;
+    }
+    #button {
+        background-color:rgba(103, 216, 105, 0.8);
+        color: whitesmoke;
+        width: max-content;
+        text-align: center;
+        border-radius: 30px;
+        font-size: 40px;
+        border: 2px whitesmoke;
+        box-shadow: 0px 0px 40px rgb(103, 216, 105);
+        border: 5px solid whitesmoke;
+        padding: 10px 40px;
+        cursor: pointer;
+        align-self: center;
+        margin-top: 20px;
+    }
+    #button-block {
+        width: max-content;
+        margin: auto;
+    }
+    #back {
+        background-color:rgba(103, 216, 105, 0.8);
+        color: whitesmoke;
+        border-radius: 20px;
+        font-size: 20px;
+        box-shadow: 0px 0px 40px rgb(103, 216, 105);
+        border: 3px solid whitesmoke;
+        padding: 10px 20px;
+        width: max-content;
+        text-decoration: none;
+    }
+    #back-block {
+        margin-top: 30px;
+        width: max-content;
+        margin-bottom: 32px;
+        margin-right: 10px;
+        margin-left: 75px;
+        margin-top: 50px;
+    }
+    #back:hover {
+        background-color: rgb(73, 210, 75);
+    }
+    #input-block {
+        width: max-content;
+        margin: auto;
+    }
+</style>
+
+<body>
+    <div id="back-block">
+        <a href="/" id="back">назад</a>
+    </div>
+
+    <div id="main-text-block">
+        <h1 id="main-text">ВВЕДИТЕ ЛОГИН КОТОРЫЙ ВЫ ИСПОЛЬЗОВАЛИ ВО ВРЕМЯ РЕГИСТРАЦИИ</h1>
+    </div>
+    {% block content %}
+    <form action="{{url_for('register')}}" method="post" id="forma">
+        <div id="input-block">
+            <label for="login" id="laybelchik">
+                <input type="text" name="login" placeholder="Придумайте себе имя" required id="inputik">
+            </label>
+        </div>
+        <div id="button-block">
+            <button id="button">ЗАРЕГЕСТРИРОВАТЬСЯ</button>
+        </div>
+    </form>
+    {% endblock %}
+</body>
+
+</html>

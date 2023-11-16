@@ -35,3 +35,5 @@ async def on_message(message):
             await message.channel.send('Спасибо за помощь в сборе предложений❗ Мы записали вашу идею на наш официальный сайт❗')
         else:
             await message.channel.send('ПУСТОЕ ПРЕДЛОЖЕНИЕ ОТПРАВИТЬ НЕЛЬЗЯ❗')
+
+client.run('MTE3MzMxMTgwOTk0MDM2NTMyMg.GBl0nK.Nc-JWrYsWearindFe6IllmIhnP__NCUAdeMfQ0')

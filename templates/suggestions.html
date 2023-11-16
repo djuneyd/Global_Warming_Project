@@ -40,18 +40,11 @@
         width: 200px;
         margin: auto;
     }
-    .offer {
-        background-color:rgba(103, 216, 105, 0.8);
-        color: whitesmoke;
-        border-radius: 20px;
+    .header-topic {
+        font-size: 25px;
+    }
+    .text {
         font-size: 20px;
-        box-shadow: 0px 0px 40px rgb(103, 216, 105);
-        border: 3px solid whitesmoke;
-        padding: 10px 20px;
-        margin-top: 10px;
-        margin-left: 50px;
-        width: max-content;
-        font-weight: 500;
     }
     #back {
         background-color:rgba(103, 216, 105, 0.8);
@@ -73,6 +66,18 @@
     }
     #back:hover {
         background-color: rgb(73, 210, 75);
+    }
+    .offer {
+        margin-left: 60px;
+        color: whitesmoke;
+        background-color:rgba(103, 216, 105, 0.8);
+        border-radius: 20px;
+        box-shadow: 0px 0px 40px rgb(103, 216, 105);
+        border: 3px solid whitesmoke;
+        padding: 0px 20px;
+        width: max-content;
+        text-decoration: none;
+        margin-bottom: 30px;
     }
 </style>
 
@@ -101,7 +106,10 @@
 
     {% block content %}
     {% for offer in offers %}
-        <h4 class="offer">Аноним говорит: {{offer.offer}}</h4>
+    <div class="offer">
+        <h4 class="header-topic">Аноним говорит:</h4>
+        <p class="text">{{offer.offer}}</p>
+    </div>
     {% endfor %}
     {% endblock %}
 </body>

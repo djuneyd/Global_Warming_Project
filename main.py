@@ -23,7 +23,9 @@ def index():
 @app.route('/suggestions')
 def suggestions():
     offers = Offers.query.order_by(Offers.id).all()
-    return render_template('suggestions.html', offers=offers)
+    i = 0
+    return render_template('suggestions.html', offers=offers
+                                            , i=i)
 
 @app.route('/main_info')
 def main_info():

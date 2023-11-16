@@ -25,6 +25,10 @@ def suggestions():
     offers = Offers.query.order_by(Offers.id).all()
     return render_template('suggestions.html', offers=offers)
 
+@app.route('/main_info')
+def main_info():
+    return render_template('must_know.html')
+
 
 if __name__ == "__main__":
     app.run(debug=True)

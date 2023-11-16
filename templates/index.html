@@ -46,25 +46,32 @@
         margin-top: 50px;
     }
 
-    #suggestions {
+    .button {
+        font-size: 25px;
+        color: whitesmoke;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .button:hover {
+        background-color: rgb(73, 210, 75);
+    }
+
+    .button-block {
+        width: 180px;
         background-color:rgba(103, 216, 105, 0.8);
         box-shadow: 0px 0px 40px rgb(103, 216, 105);
         border: 5px solid whitesmoke;
-        font-size: 25px;
-        color: whitesmoke;
         border-radius: 25px;
-        text-align: center;
-        text-decoration: none;
         padding: 10px 20px;
-    }
-
-    #suggestions:hover {
-        background-color: rgb(73, 210, 75);
+        text-align: center;
     }
 
     #buttons {
         margin-left: 425px;
         margin-top: 50px;
+        width: 1230px;
+        align-items: center;
     }
 </style>
 
@@ -80,8 +87,18 @@
     <table id="buttons">
         <tr>
             <td>
-                <div id="suggestions-block">
-                    <a href="/suggestions" id="suggestions">Предложения</a>
+                <div class="button-block">
+                    <a href="/suggestions" class="button">Предложения</a>
+                </div>
+            </td>
+            <td>
+                <div class="button-block">
+                    <a href="/main_info" class="button">Важно знать</a>
+                </div>
+            </td>
+            <td>
+                <div class="button-block">
+                    <a href="/suggestions" class="button">Наш ИИ</a>
                 </div>
             </td>
         </tr>

@@ -102,6 +102,10 @@ def offer():
 def main_info():
     return render_template('must_know.html')
 
+@app.route('/our_ai')
+def ai():
+    return render_template('ai_page.html')
+
 
 if __name__ == "__main__":
     app.run(debug=True)

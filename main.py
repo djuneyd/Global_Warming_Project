@@ -1,6 +1,7 @@
 from flask import redirect
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+import speech_recognition as speech_recog
 
 app = Flask(__name__)
 
@@ -22,6 +23,21 @@ class User(db.Model):
 
     def __repr__(self):
         return f'<Card {self.id}>'
+
+@app.route('/speak')
+def speach():
+    try:
+        mic = speech_recog.Microphone()
+        recog = speech_recog.Recognizer()
+
+        with mic as audio_file:
+            recog.adjust_for_ambient_noise(audio_file)
+            audio = recog.listen(audio_file)
+            text = recog.recognize_google(audio, language="ru-RU")
+            return render_template('offer.html', text=text)
+    except:
+        text = ''
+        return render_template('offer.html', text=text)
 
 @app.route("/")
 def log_reg():

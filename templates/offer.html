@@ -21,7 +21,6 @@
         border-radius: 30px;
         margin: auto;
         font-size: 35px;
-        border: 2px whitesmoke;
         box-shadow: 0px 0px 40px rgb(103, 216, 105);
         border: 5px solid whitesmoke;
         padding: 10px 40px;
@@ -54,7 +53,6 @@
     #forma {
         margin: auto;
         width: max-content;
-        margin-top: 300px;
         background-color: transparent;
     }
     #inputik {
@@ -73,10 +71,9 @@
         text-align: center;
         border-radius: 30px;
         font-size: 40px;
-        border: 2px whitesmoke;
         box-shadow: 0px 0px 40px rgb(103, 216, 105);
         border: 5px solid whitesmoke;
-        padding: 10px 40px;
+        padding: 10px 20px;
         cursor: pointer;
         align-self: center;
         margin-top: 20px;
@@ -84,6 +81,26 @@
     #button-block {
         width: max-content;
         margin: auto;
+    }
+    #content {
+        height: 200px;
+        margin: auto;
+        margin-top: 260px;
+    }
+    #say-button {
+        margin-left: 30px;
+        background-color:rgba(103, 216, 105, 0.8);
+        color: whitesmoke;
+        width: max-content;
+        text-align: center;
+        border-radius: 30px;
+        font-size: 20px;
+        box-shadow: 0px 0px 40px rgb(103, 216, 105);
+        border: 2px solid whitesmoke;
+        padding: 5px 10px;
+        cursor: pointer;
+        align-self: center;
+        margin-bottom: 80px;
     }
 </style>
 
@@ -95,14 +112,27 @@
         <h1 id="main-text">ПРЕДЛОЖИТЕ СВОЮ ИДЕЮ ДЛЯ БОРЬБЫ С ГЛОБАЛЬНЫМ ПОТЕПЛЕНИЕМ</h1>
     </div>
     {% block content %}
-    <form action="{{url_for('offer')}}" method="post" id="forma">
-        <label for="offer" id="laybelchik">
-            <input type="text" name="offer" placeholder="Введите своё предложение..." required id="inputik">
-        </label>
-        <div id="button-block">
-            <button id="button">ОТПРАВИТЬ!</button>
-        </div>
-    </form>
+    <table id="content">
+        <tr>
+            <td>
+                <form action="{{url_for('offer')}}" method="post" id="forma">
+                    <label for="offer" id="laybelchik">
+                        <textarea name="offer" placeholder="Введите своё предложение..." required id="inputik" rows="1">{{text}}</textarea>
+                    </label>
+                    <div id="button-block">
+                        <button id="button">ОТПРАВИТЬ!</button>
+                    </div>
+                </form>
+            </td>
+            <td>
+                <form action="{{url_for('speach')}}">
+                    <div id="say-button-block">
+                        <button id="say-button">Говорить чтобы писать</button>
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </table>
     {% endblock %}
 </body>
 

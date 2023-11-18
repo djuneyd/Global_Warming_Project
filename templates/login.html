@@ -41,6 +41,7 @@
         font-size: 30px;
         border-bottom: 2px solid gray;
         padding: 20px 0px;
+        align-self: center;
     }
     #button {
         background-color:rgba(103, 216, 105, 0.8);
@@ -77,7 +78,7 @@
         width: max-content;
         margin-bottom: 32px;
         margin-right: 10px;
-        margin-left: 75px;
+        margin-left: 57px;
         margin-top: 50px;
     }
     #back:hover {
@@ -86,7 +87,7 @@
     #error {
         width: max-content;
         margin: auto;
-        margin-top: 250px;
+        margin-top: 200px;
     }
 </style>
 
@@ -96,7 +97,7 @@
     </div>
 
     <div id="main-text-block">
-        <h1 id="main-text">ВВЕДИТЕ ЛОГИН КОТОРЫЙ ВЫ ИСПОЛЬЗОВАЛИ ВО ВРЕМЯ РЕГИСТРАЦИИ</h1>
+        <h1 id="main-text">ВВЕДИТЕ ДАННЫЕ КОТОРЫЕ ВЫ ИСПОЛЬЗОВАЛИ ВО ВРЕМЯ РЕГИСТРАЦИИ</h1>
     </div>
     {% block content %}
     <div id="error">
@@ -107,9 +108,16 @@
         {% endif %}
     </div>
     <form action="{{url_for('login')}}" method="post" id="forma">
-        <label for="login" id="laybelchik">
-            <input type="text" name="login" placeholder="Введите своё имя..." required id="inputik">
-        </label>
+        <div>
+            <label for="login" id="laybelchik">
+                <input type="text" name="login" placeholder="Введите своё имя..." required id="inputik">
+            </label>
+        </div>
+        <div>
+            <label for="password" id="laybelchik">
+                <input type="password" name="password" placeholder="Введите пароль..." required id="inputik">
+            </label>
+        </div>
         <div id="button-block">
             <button id="button">ВОЙТИ</button>
         </div>

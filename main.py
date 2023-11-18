@@ -20,6 +20,8 @@ class Offers(db.Model):
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     login = db.Column(db.String(20), nullable=False)
+    password = db.Column(db.String(20), nullable=False)
+
 
     def __repr__(self):
         return f'<Card {self.id}>'
@@ -47,14 +49,15 @@ def log_reg():
 def login():
     global name
     i = 0
-    error = 'Такого логина не существует'
+    error = 'Неправильный логин или пароль!'
     if request.method == 'POST':
         form_login = request.form['login']
+        form_password = request.form['password']
 
         users_db = User.query.all()
 
         for user in users_db:
-            if user.login == form_login:
+            if user.login == form_login and user.password == form_password:
                 name = form_login
                 return redirect('/main')
         else:
@@ -66,10 +69,11 @@ def login():
 
 @app.route('/register', methods = ['GET', 'POST'])
 def register():
-    error = 'Такой логин уже был зарегестрирован'
+    error = 'Такой логин уже был зарегестрирован!'
     i = 0
     if request.method == 'POST':
         login = request.form['login']
+        password = request.form['password']
 
         users = User.query.all()
 
@@ -78,7 +82,7 @@ def register():
                 i = 1
                 return render_template("register.html", error=error, i=i)
         else:
-            user_card = User(login=login)
+            user_card = User(login=login, password=password)
 
             db.session.add(user_card)
             db.session.commit()

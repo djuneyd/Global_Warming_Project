@@ -93,6 +93,10 @@
         margin: auto;
         margin-top: 250px;
     }
+    .input-block {
+        width: 400px;
+        margin: auto;
+    }
 </style>
 
 <body>
@@ -112,9 +116,14 @@
         {% endif %}
     </div>
     <form action="{{url_for('register')}}" method="post" id="forma">
-        <div id="input-block">
+        <div class="input-block">
             <label for="login" id="laybelchik">
-                <input type="text" name="login" placeholder="Придумайте себе имя..." required id="inputik">
+                <input type="text" name="login" placeholder="Придумайте имя..." required id="inputik">
+            </label>
+        </div>
+        <div class="input-block">
+            <label for="password" id="laybelchik">
+                <input type="password" name="password" placeholder="Придумайте пароль..." required id="inputik">
             </label>
         </div>
         <div id="button-block">

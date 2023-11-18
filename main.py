@@ -69,7 +69,7 @@ def login():
 
 @app.route('/register', methods = ['GET', 'POST'])
 def register():
-    error = 'Такой логин уже был зарегестрирован!'
+    error = 'Выберите другой логин или пароль!'
     i = 0
     if request.method == 'POST':
         login = request.form['login']
@@ -78,7 +78,7 @@ def register():
         users = User.query.all()
 
         for user in users:
-            if user.login == login:
+            if user.login == login or user.password == password:
                 i = 1
                 return render_template("register.html", error=error, i=i)
         else:

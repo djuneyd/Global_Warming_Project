@@ -102,6 +102,13 @@
         align-self: center;
         margin-bottom: 80px;
     }
+    .button:hover {
+        background-color: rgb(73, 210, 75);
+    }
+    #button:hover,
+    #say-button:hover {
+        background-color: rgb(73, 210, 75);
+    }
 </style>
 
 <body>
@@ -127,7 +134,7 @@
             <td>
                 <form action="{{url_for('speach')}}">
                     <div id="say-button-block">
-                        <button id="say-button">Говорить чтобы писать</button>
+                        <button id="say-button">Голосовой ввод</button>
                     </div>
                 </form>
             </td>

@@ -81,9 +81,6 @@
         margin-left: 75px;
         margin-top: 50px;
     }
-    #back:hover {
-        background-color: rgb(73, 210, 75);
-    }
     #input-block {
         width: max-content;
         margin: auto;
@@ -97,8 +94,14 @@
         width: 400px;
         margin: auto;
     }
-    #button:hover {
-        background-color: rgb(73, 210, 75);
+    #button:hover,
+    #back:hover {
+        animation: hover_button 1s infinite;
+    }
+    @keyframes hover_button {
+        40% {
+            background-color: rgb(73, 210, 75);
+        }
     }
 </style>
 

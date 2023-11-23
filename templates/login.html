@@ -81,16 +81,19 @@
         margin-left: 57px;
         margin-top: 50px;
     }
-    #back:hover {
-        background-color: rgb(73, 210, 75);
-    }
     #error {
         width: max-content;
         margin: auto;
         margin-top: 200px;
     }
-    #button:hover {
-        background-color: rgb(73, 210, 75);
+    #button:hover,
+    #back:hover {
+        animation: hover_button 1s infinite;
+    }
+    @keyframes hover_button {
+        40% {
+            background-color: rgb(73, 210, 75);
+        }
     }
 </style>
 

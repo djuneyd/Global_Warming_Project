@@ -64,7 +64,12 @@
         margin-right: 10px;
     }
     .back:hover {
-        background-color: rgb(73, 210, 75);
+        animation: hover_button 1s infinite;
+    }
+    @keyframes hover_button {
+        40% {
+            background-color: rgb(73, 210, 75);
+        }
     }
     .offer {
         margin-left: 53px;

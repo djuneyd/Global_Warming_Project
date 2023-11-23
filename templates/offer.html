@@ -47,9 +47,6 @@
         margin-left: 60px;
         margin-top: 60px;
     }
-    .back:hover {
-        background-color: rgb(73, 210, 75);
-    }
     #forma {
         margin: auto;
         width: max-content;
@@ -102,12 +99,15 @@
         align-self: center;
         margin-bottom: 80px;
     }
-    .button:hover {
-        background-color: rgb(73, 210, 75);
-    }
     #button:hover,
+    .back:hover,
     #say-button:hover {
-        background-color: rgb(73, 210, 75);
+        animation: hover_button 1s infinite;
+    }
+    @keyframes hover_button {
+        40% {
+            background-color: rgb(73, 210, 75);
+        }
     }
 </style>
 

@@ -1,0 +1,1 @@
+abrikos = open('info\абрикос.txt', 'r', encoding='utf8').read()

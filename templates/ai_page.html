@@ -14,10 +14,155 @@
         background-attachment: fixed;
         font-family:Georgia, 'Times New Roman', Times, serif;
     }
+    #main-text {
+        background-color:rgba(103, 216, 105, 0.8);
+        color: whitesmoke;
+        width: max-content;
+        text-align: center;
+        border-radius: 30px;
+        margin: auto;
+        font-size: 35px;
+        box-shadow: 0px 0px 40px rgb(103, 216, 105);
+        border: 5px solid whitesmoke;
+        padding: 10px 40px;
+    }
+    #main-text-block {
+        margin-bottom: 50px;
+    }
+    .back {
+        background-color:rgba(103, 216, 105, 0.8);
+        color: whitesmoke;
+        border-radius: 20px;
+        font-size: 20px;
+        box-shadow: 0px 0px 40px rgb(103, 216, 105);
+        border: 3px solid whitesmoke;
+        padding: 10px 20px;
+        width: max-content;
+        text-decoration: none;
+    }
+    .back-block {
+        width: max-content;
+        margin-top: 20px;
+        margin-left: 15px;
+    }
+    .back:hover {
+        animation: hover_button 1s infinite;
+    }
+    @keyframes hover_button {
+        40% {
+            background-color: rgb(73, 210, 75);
+        }
+    }
+    .info-table {
+        margin: auto;
+        margin-top: 100px;
+        width: 1800px;
+    }
+    .image {
+        width: 1200px;
+        border: 3px solid whitesmoke;
+        border-radius: 20px;
+        box-shadow: 0px 0px 60px rgb(103, 216, 105);
+        margin-left: 40px;
+    }
+    .header-topic {
+        font-size: 35px;
+    }
+    .text {
+        font-size: 20px;
+    }
+    .text-card {
+        background-color:rgba(103, 216, 105, 0.8);
+        color: black;
+        border-radius: 30px;
+        border: 2px whitesmoke;
+        box-shadow: 0px 0px 40px rgb(103, 216, 105);
+        border: 5px solid whitesmoke;
+        padding: 10px 40px;
+        margin-left: 40px;
+    }
+    #main-info {
+        width: 1000px;
+        font-size: 25px;
+        color: whitesmoke;
+        border-radius: 25px;
+        margin: auto;
+        text-align: center;
+        background-color:rgba(103, 216, 105, 0.8);
+        box-shadow: 0px 0px 40px rgb(103, 216, 105);
+        border: 5px solid whitesmoke;
+        padding: 10px 20px;
+    }
+
+    #main-info-block {
+        margin-top: 50px;
+    }
+    #buttons-table {
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+    #ds_link_image {
+        border-radius: 50%;
+        width: 50px;
+        border: 3px solid whitesmoke;
+        box-shadow: 0px 0px 40px rgb(46, 197, 48);
+    }
+    #ds_link_image_block {
+        width: 200px;
+        margin: auto;
+    }
 </style>
 
 <body>
-    
+    <table id="buttons-table">
+        <tr>
+            <td>
+                <div class="back-block">
+                    <a href="/main" class="back">назад</a>
+                </div>
+            </td>
+            <td>
+                <div class="back-block">
+                    <a href="https://discord.gg/tvajAKzU5U" target="_blank">
+                        <img src="../static/img/ds_link.jpg" alt="Дискорд бот" id="ds_link_image">
+                    </a>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div id="main-text-block">
+        <h1 id="main-text">НАШ ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ</h1>
+    </div>
+    <div id="main-info-block">
+        <p id="main-info">Помимо всей предоставленной информации, наша организация также предоставляет услуги умного дискорд бота (EkoFriendly_Bot). Данный бот на основе искусственного интеллекта может различать 20 видов грибов, а также показывать прогноз погоды в любом городе который вы ему только скажите. Перейти в сервер и воспользоваться им можно нажав на иконку в левом верхнем углу. Ниже описаны все его возможности.</p>
+    </div>
+    <table class="info-table">
+        <tr>
+            <td>
+                <img src="/static/img/ds_1.jpg" alt="rerh" class="image">
+            </td>
+            <td>
+                <div class="text-card">
+                    <h3 class="header-topic">1. Команда $hello</h3>
+                    <p class="text">Напишите нашему боту данную команду и он вежливо с вами поздаровается и предоставит информацию о всех своих возможностях!</p>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <table class="info-table">
+        <tr>
+            <td>
+                <div class="text-card">
+                    <h3 class="header-topic">2. Команда $baserules</h3>
+                    <p class="text">Напишите нашему боту данную команду и он максимально подробно и чётко расскажет вам самые базовые правила при обращении с грибами. А именно как их выбирать, хранить и так далее.</p>
+                </div>
+            </td>
+            <td>
+                <img src="/static/img/ds_2.png" alt="rerh" class="image">
+            </td>
+        </tr>
+    </table>
 </body>
 
 </html>

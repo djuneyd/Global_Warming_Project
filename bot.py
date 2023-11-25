@@ -88,4 +88,4 @@ async def check(ctx):
     os.remove(imageName)
 
 
-client.run("MTE3Nzg3Mzc4MjAzMjA1NjM4MQ.GjJ_sp.z0hS4jfKYdCcsGbH_3970Zbkikfb33kGi_qySI")
+client.run("MTE3Nzg3Mzc4MjAzMjA1NjM4MQ.G_cleC.6OMbJ2w5ITbRiwlX2tlXTz0naEYr-jGn5qB-_I")

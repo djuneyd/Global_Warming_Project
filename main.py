@@ -2,7 +2,6 @@ from flask import redirect
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 import speech_recognition as speech_recog
-from AI_function import Mushroom
 
 app = Flask(__name__)
 

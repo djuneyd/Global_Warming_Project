@@ -19,20 +19,20 @@ async def on_ready():
 @client.command()
 async def hello(ctx):
     await ctx.send('===============================================================')
-    await ctx.send('Привет! Я профессиональный ботаник, различаю 15 видов деревьев. Ценную информацию о дереве вы также можете получить у меня. Для проверки дерева прикрепите фото дерева и напишите команду $check и я дам вам подробную информацию❗ Также я выдаю максимально точный прогноз погоды из любого города которого вы только пожелаете❗ Для этого напишите команду $weather и потом название города❗')
+    await ctx.send('Привет! Я профессиональный ботаник, различаю 15 видов деревьев. Ценную информацию о дереве вы также можете получить у меня. Для проверки дерева прикрепите фото дерева и напишите команду $check и я дам вам подробную информацию❗ Также я выдаю максимально точный прогноз погоды из любого города которого вы только пожелаете❗ Для этого напишите команду $weather, потом название города и инициаллы страны!!!, Например: $weather Rome IT❗')
     await ctx.send('===============================================================')
 
 @client.command()
-async def weather(ctx, city):
+async def weather(ctx, city, country):
     try:
-        url = 'https://api.openweathermap.org/data/2.5/weather?q='+city+'&units=metric&lang=ru&appid=79d1ca96933b0328e1c7e3e7a26cb347'
+        url = 'https://api.openweathermap.org/data/2.5/weather?q='+city+', '+country+'&units=metric&lang=ru&appid=79d1ca96933b0328e1c7e3e7a26cb347'
         weather_data = requests.get(url).json()
         temperature = round(weather_data['main']['temp'])
         temperature_feels = round(weather_data['main']['feels_like'])
         forecast = [city, str(temperature), str(temperature_feels)]
 
         await ctx.send('===============================================================')
-        await ctx.send(f'сейчас в городе {forecast[0]}: {forecast[1]} °C')
+        await ctx.send(f'Сейчас в городе {forecast[0]}: {forecast[1]} °C')
         await ctx.send(f'Ощущается как {forecast[2]} °C')
         await ctx.send('===============================================================')
     except:
@@ -64,4 +64,4 @@ async def weather(ctx, city):
 #     # await ctx.send('===============================================================')
 #     os.remove(imageName)
 
-        
+client.run("MTE3Nzg3Mzc4MjAzMjA1NjM4MQ.GjJ_sp.z0hS4jfKYdCcsGbH_3970Zbkikfb33kGi_qySI")

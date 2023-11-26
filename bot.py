@@ -10,7 +10,6 @@ intents.message_content = True
 
 client = commands.Bot(command_prefix='$', intents=intents)
 
-
 @client.event
 async def on_ready():
     print("Bot is ready")
@@ -22,7 +21,7 @@ async def hello(ctx):
     await ctx.send('===============================================================')
     await ctx.send('Команда $baserules покажет вам базовые правила при обращении с грибами❗')
     await ctx.send('===============================================================')
-    await ctx.send('Также я показываю максимально точный прогноз погоды любого города который вы пожелаете, для этого напишите команду $weather, потом название города и инициаллы страны на английском языке. Например: $weather Rome IT❗')
+    await ctx.send('Также я показываю максимально точный прогноз погоды любого города который вы пожелаете, для этого напишите команду $weather, потом название города и инициаллы страны на английском языке. Например: $weather Нью-Йорк US❗')
     await ctx.send('===============================================================')
 
 @client.command()
@@ -87,3 +86,5 @@ async def check(ctx):
         await ctx.send('===============================================================')
     os.remove(imageName)
 
+
+client.run("MTE3Nzg3Mzc4MjAzMjA1NjM4MQ.GI4Xl0.Q448M--has1XHNj4s9qTNsClwmAhsOGButUSX0")
